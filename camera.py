@@ -1,3 +1,9 @@
+'''
+Author: Shahmir Rizvi
+Date: 10/8/2024
+Description: Shows live camera feed using opencv
+'''
+
 import cv2
 
 # Open a connection to the default camera (0)
