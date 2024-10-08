@@ -1,7 +1,7 @@
 '''
 Author: Shahmir Rizvi
 Date: 10/8/2024
-Description: Different ways to make a model. Tested with MNIST data set
+Description: Different ways to make a model. Tested with MNIST data set.
 '''
 
 import os
@@ -18,7 +18,9 @@ from tensorflow.keras.datasets import mnist
 x_train = x_train.reshape(-1, 28*28).astype("float32") / 255.0 # The image size is 28x28
 x_test = x_test.reshape(-1, 28*28).astype("float32") / 255.0
 
-test_image = x_test[0]
+test_index = 0
+test_image = x_test[test_index]
+result = y_test[test_index]
 
 def method_1():
     # Sequential API (Very convenient, not very flexible)
@@ -85,7 +87,7 @@ def method_3():
     model.evaluate(x_test, y_test, batch_size=32, verbose=2)
 
     print("Prediction: ", model.predict(np.expand_dims(x_test[0], axis=0)))
-    print("Ground Truth: ", y_test[0])
+    print("Ground Truth: ", result)
 
 def display_image():
     image = test_image * 255.0
